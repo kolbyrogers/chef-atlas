@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ChefAtlas</string>
+    <string name="list_fragment">Recipes</string>
+    <string name="favorites_fragment">Favorites</string>
 </resources>
