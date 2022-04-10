@@ -44,32 +44,35 @@
 
     <TextView
         android:id="@+id/recipeTime"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="@+id/recipeDescription"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/recipeServings"
+        app:layout_constraintStart_toEndOf="@+id/recipeImage"
         app:layout_constraintTop_toBottomOf="@+id/timeImage"
         tools:text="25 mins" />
 
     <TextView
-        android:id="@+id/recipeCalories"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toEndOf="@+id/recipeTime"
-        app:layout_constraintTop_toBottomOf="@+id/caloriesImage"
-        tools:text="500 Calories" />
-
-    <ImageView
-        android:id="@+id/caloriesImage"
+        android:id="@+id/recipeServings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="@+id/recipeCalories"
-        app:layout_constraintStart_toStartOf="@+id/recipeCalories"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/recipeImage"
+        app:layout_constraintTop_toBottomOf="@+id/servingsImage"
+        tools:text="Serves 4" />
+
+    <ImageView
+        android:id="@+id/servingsImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/recipeServings"
+        app:layout_constraintStart_toStartOf="@+id/recipeServings"
         app:layout_constraintTop_toBottomOf="@+id/recipeDescription"
-        app:srcCompat="@drawable/flame"
+        app:srcCompat="@drawable/servings"
         app:tint="#D32F2F" />
 
     <TextView
@@ -83,5 +86,28 @@
         app:layout_constraintStart_toStartOf="@+id/recipeTitle"
         app:layout_constraintTop_toBottomOf="@+id/recipeTitle"
         tools:text="This is a description for the recipe! This is a tasty recipe! This is some more descriptive text to wrap lines!" />
+
+    <ImageView
+        android:id="@+id/priceImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/recipePrice"
+        app:layout_constraintStart_toStartOf="@+id/recipePrice"
+        app:layout_constraintTop_toBottomOf="@+id/recipeDescription"
+        app:srcCompat="@drawable/money"
+        app:tint="#388E3C" />
+
+    <TextView
+        android:id="@+id/recipePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/recipeServings"
+        app:layout_constraintTop_toBottomOf="@+id/priceImage"
+        tools:text="$7.28 per" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
