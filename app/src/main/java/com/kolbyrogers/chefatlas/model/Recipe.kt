@@ -5,27 +5,27 @@ import com.google.gson.annotations.SerializedName
 
 data class Recipe(
     @SerializedName("aggregateLikes")
-    val aggregateLikes: Int,
+    var aggregateLikes: Int,
     @SerializedName("extendedIngredients")
-    val extendedIngredients: List<ExtendedIngredient>,
+    var extendedIngredients: List<ExtendedIngredient>,
     @SerializedName("id")
-    val id: Int,
+    var id: Int,
     @SerializedName("image")
-    val image: String,
+    var image: String = "",
     @SerializedName("instructions")
-    val instructions: String,
+    var instructions: String,
     @SerializedName("pricePerServing")
-    val pricePerServing: Double,
+    var pricePerServing: Double,
     @SerializedName("readyInMinutes")
-    val readyInMinutes: Int,
+    var readyInMinutes: Int,
     @SerializedName("servings")
-    val servings: Int,
+    var servings: Int,
     @SerializedName("sourceName")
-    val sourceName: String,
+    var sourceName: String,
     @SerializedName("sourceUrl")
-    val sourceUrl: String,
+    var sourceUrl: String,
     @SerializedName("summary")
-    val summary: String,
+    var summary: String,
     @SerializedName("title")
-    val title: String,
+    var title: String,
 )
