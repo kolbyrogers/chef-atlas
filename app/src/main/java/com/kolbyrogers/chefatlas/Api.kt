@@ -9,7 +9,7 @@ interface Api {
     @GET("recipes/complexSearch?" +
             "apiKey=68cc9e53f1964eaa9a9d79516d32fa36" +
             "&number=40" +
-            "&type=snack" +
+            "&type=lunch" +
             "&addRecipeInformation=true"
     )
     fun fetchRecipes(): Call<RecipeResponse>

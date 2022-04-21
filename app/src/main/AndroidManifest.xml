@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChefAtlas">
         <activity
+            android:name=".InstructionsActivity"
+            android:exported="false" />
+        <activity
             android:name=".RecipeActivity"
             android:exported="true">
             <intent-filter>

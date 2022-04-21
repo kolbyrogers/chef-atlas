@@ -11,31 +11,36 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rowLayout"
+        recipeClickListener="@{recipe}"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="8dp"
-        android:paddingVertical="12dp">
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp">
 
         <ImageView
             android:id="@+id/recipeImage"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
             setImage="@{recipe.image}"
+            android:layout_width="196dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/recipeTitle"
+            setTitle="@{recipe.title}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="-4dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="4dp"
             android:maxLines="2"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            setTitle="@{recipe.title}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/recipeImage"
             app:layout_constraintTop_toTopOf="parent"
@@ -43,12 +48,12 @@
 
         <TextView
             android:id="@+id/recipeDescription"
+            setDescription="@{recipe.summary}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:ellipsize="end"
             android:maxLines="3"
-            setDescription="@{recipe.summary}"
             app:layout_constraintEnd_toEndOf="@+id/recipeTitle"
             app:layout_constraintStart_toStartOf="@+id/recipeTitle"
             app:layout_constraintTop_toBottomOf="@+id/recipeTitle"
@@ -56,12 +61,14 @@
 
         <TextView
             android:id="@+id/recipeTime"
+            setPrepTime="@{recipe.readyInMinutes}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="24dp"
-            setPrepTime="@{recipe.readyInMinutes}"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/recipeServings"
             app:layout_constraintStart_toEndOf="@+id/recipeImage"
             app:layout_constraintTop_toBottomOf="@+id/timeImage"
@@ -69,10 +76,12 @@
 
         <TextView
             android:id="@+id/recipeServings"
+            setServings="@{recipe.servings}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            setServings="@{recipe.servings}"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/recipeImage"
             app:layout_constraintTop_toBottomOf="@+id/servingsImage"
@@ -80,12 +89,14 @@
 
         <TextView
             android:id="@+id/recipePrice"
+            setPrice="@{recipe.pricePerServing}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="24dp"
-            setPrice="@{recipe.pricePerServing}"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/recipeServings"
             app:layout_constraintTop_toBottomOf="@+id/priceImage"
@@ -100,7 +111,7 @@
             app:layout_constraintStart_toStartOf="@+id/recipeTime"
             app:layout_constraintTop_toBottomOf="@+id/recipeDescription"
             app:srcCompat="@drawable/time"
-            app:tint="#0288D1" />
+            app:tint="@color/niceBlue" />
 
         <ImageView
             android:id="@+id/servingsImage"
@@ -111,7 +122,7 @@
             app:layout_constraintStart_toStartOf="@+id/recipeServings"
             app:layout_constraintTop_toBottomOf="@+id/recipeDescription"
             app:srcCompat="@drawable/servings"
-            app:tint="#D32F2F" />
+            app:tint="@color/niceRed" />
 
         <ImageView
             android:id="@+id/priceImage"
@@ -122,7 +133,7 @@
             app:layout_constraintStart_toStartOf="@+id/recipePrice"
             app:layout_constraintTop_toBottomOf="@+id/recipeDescription"
             app:srcCompat="@drawable/money"
-            app:tint="#388E3C" />
+            app:tint="@color/niceGreen" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

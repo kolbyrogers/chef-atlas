@@ -1,7 +1,9 @@
 package com.kolbyrogers.chefatlas.model
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Recipe(
     @SerializedName("aggregateLikes")
@@ -28,4 +30,4 @@ data class Recipe(
     var summary: String,
     @SerializedName("title")
     var title: String,
-)
+) : Serializable
